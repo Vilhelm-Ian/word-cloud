@@ -14,6 +14,7 @@ const Home: NextPage = () => {
 
   useMemo(() => {
     const map = new Map();
+    if (text === "") return;
     text.split(" ").map((word) => {
       let word_occurences = map.get(word);
       if (word_occurences === undefined) map.set(word, 1);
@@ -33,18 +34,19 @@ const Home: NextPage = () => {
   }
 
   function generate_jsx(words: Map<string, number>) {
-    let result = [];
+    let result: JSX.Element[] = [];
     words.forEach((value, key) => {
       result.push(
-        <span
+        <div
+          className="word"
           key={key}
           style={{
-            color: `rgb(${value * 4}, ${value * 3}, 80)`,
+            color: `rgb(${value * 4}, ${value * 10}, 80)`,
             fontSize: value * 20,
           }}
         >
           {key + " "}
-        </span>
+        </div>
       );
     });
     return result;

@@ -1,16 +1,24 @@
-html,
-body {
-  padding: 0;
+span {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.word-map {
+  width: 100vw;
+  border: 0.5rem solid black;
+  border-radius: 50vw;
+  text-align: center;
+  overflow: auto;
 }
 
-* {
-  box-sizing: border-box;
+.word-map:empty {
+  visibility: hidden;
+}
+
+.word-map div:nth-child(3n) {
+  writing-mode: vertical-lr;
+}
+
+.word {
+  margin: 0.1rem;
+  float: left;
 }
